@@ -49,5 +49,22 @@ String prosesTransaksi(Transaksi transaksiLaundry) {
 
   double total = dasar + express;
 
-  return "Berat : ${transaksiLaundry} kg (Dihitung : $hitungBerat kg) | Layanan : ${transaksiLaundry.layanan} | total : Rp. $total";
+  return "Berat : ${transaksiLaundry.berat} kg (Dihitung : $hitungBerat kg) | Layanan : ${transaksiLaundry.layanan} | total : Rp. $total";
 }
+
+void main() {
+  //karena ketentuan tugasnya disuruh pake list jadi saya pake list dan bikin 5 skenario sesuai ketentuan tugas
+  List<Transaksi> listLaundry = [
+    Transaksi(berat: 1.5, layanan: Layanan.normal), // Skenario 1: di bawah 2kg reguler (Expected: 14000)
+    Transaksi(berat: 3.0, layanan: Layanan.normal), // Skenario 2: di atas 2kg reguler (Expected: 21000)
+    Transaksi(berat: 1.0, layanan: Layanan.express), // Skenario 3: di bawah 2kg express (Expected: 21000)
+    Transaksi(berat: 4.0, layanan: Layanan.express), // Skenario 4: di atas 2kg express (Expected: 42000)
+    Transaksi(berat: -2.0, layanan: Layanan.normal), // Skenario 5: uji gagal / input minus
+  ];
+
+  // Perulangan buat nyetak hasil
+  for (var data in listLaundry) {
+    print(prosesTransaksi(data));
+  }
+}
+
