@@ -52,6 +52,7 @@ String prosesTransaksi(Transaksi transaksiLaundry) {
   return "Berat : ${transaksiLaundry.berat} kg (Dihitung : $hitungBerat kg) | Layanan : ${transaksiLaundry.layanan} | total : Rp. $total";
 }
 
+//Tabel Traceability
 void main() {
   //karena ketentuan tugasnya disuruh pake list jadi saya pake list dan bikin 5 skenario sesuai ketentuan tugas
   List<Transaksi> listLaundry = [
