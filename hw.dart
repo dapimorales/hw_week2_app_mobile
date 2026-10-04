@@ -59,7 +59,7 @@ void main() {
     Transaksi(berat: 3.0, layanan: Layanan.normal), // Skenario 2: di atas 2kg reguler (Expected: 21000)
     Transaksi(berat: 1.0, layanan: Layanan.express), // Skenario 3: di bawah 2kg express (Expected: 21000)
     Transaksi(berat: 4.0, layanan: Layanan.express), // Skenario 4: di atas 2kg express (Expected: 42000)
-    Transaksi(berat: -2.0, layanan: Layanan.normal), // Skenario 5: uji gagal / input minus
+    Transaksi(berat: -2.0, layanan: Layanan.normal), // Skenario 5: ngetest buat error
   ];
 
   // Perulangan buat nyetak hasil
